@@ -81,7 +81,6 @@ z_com = total_numerator_z/molecular_mass
 
 
 # making the moment of inertia matrix for the entire protein in the form (I11, I12, I13; I21, I22, I23; I31, I32, I33)
-# Im pretty sure this aint correct but any change is pretty easy to do
 # First element in row and column Ixx
 I11 = 0
 for i in pdf.index:
