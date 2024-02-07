@@ -152,39 +152,9 @@ moi_matrix = np.reshape(moi_matrix,(3,3))
 print('moment of inertia matrix:' ,moi_matrix)
 
 # Calculating the eigenvectors from the moment of inertia matrix
-eigenval, eigenvect = LA.eig(moi_matrix)
+eigenval, eigenvector = LA.eig(moi_matrix)
 print('eigenvalues:', eigenval)
-print('original eigenvect:',eigenvect)
-
-# Rearranging the eigenvector since python messes that up.
-# This might have to be rearranged for each different pdb file since python doesn't do it correctly.
-# Please visit https://www.dcode.fr/matrix-eigenvectors#comments and type/paste in the moment of inertia matrix.
-# The site will now open automatically. Please check the pattern there.
-# The rearrangement goes as follows. the eigenvectors of the first eigenvalue turn into first row
-# Eigenvectors of second eigenvalue turn into second row and so on.
-# A fix/better way to calculate eigenvectors is being worked upon. Code will be updated when that happens.
-# Possible fix is to calculate eigenvectors from scratch.
-
-a = eigenvect[0][0]
-b = eigenvect[1][0]
-c = eigenvect[2][0]
-d = eigenvect[0][1]
-e = eigenvect[1][1]
-f = eigenvect[2][1]
-g = eigenvect[0][2]
-h = eigenvect[1][2]
-i = eigenvect[2][2]
-
-# Rearrange the matrix below. Do not mess with the thing above.
-
-eigenvector = np.array([[d, e, f],
-                  [g, h, i],
-                  [-a, -b, -c]])
-
-print('transformed eigenvector:',eigenvector)
-
-webbrowser.open('https://www.dcode.fr/matrix-eigenvectors', new=1, autoraise=True)
-# Planning to open, add and replace values directly from the website. Not implemented yet however.
+print('original eigenvect:',eigenvector)
 
 # Generalising above matrix for further calculations
 
